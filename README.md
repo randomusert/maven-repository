@@ -4,11 +4,7 @@
 
 This is a simple Maven repository by using GitHub to manage dependencies.
 
-You can fork this repository as a template to create your own personal Maven repository, provided it maintains and follows the `Apache-2.0` license.
 
-这是一个使用 GitHub 管理依赖的简单 Maven 存储库。
-
-你可以复刻此存储库作为模版创建自己的私人 Maven 存储库，但必须保持并遵循 `Apache-2.0` 许可协议。
 
 ## Usage
 
@@ -77,74 +73,6 @@ publishing {
 }
 ```
 
-## 使用方法
-
-目录 `repository` 即为存储库，其中包含了 `releases` (发行版) 和 `snapshots` (快照) 两部分，这里存放了所有 Maven 项目的工件。
-
-使用以下链接引用此存储库。
-
-> Releases
-
-```
-https://raw.githubusercontent.com/[组织名或用户名]/[存储库名]/[分支名]/repository/releases
-```
-
-> SnapShots
-
-```
-https://raw.githubusercontent.com/[组织名或用户名]/[存储库名]/[分支名]/repository/snapshots
-```
-
-针对中国大陆地区无法访问 `raw.githubusercontent.com` 可以使用加速服务，例如 [GitMirror](https://gitmirror.com/)。
-
-### 在 Gradle 项目中使用
-
-你可以在任意 Gradle 项目中使用此存储库。
-
-#### 配置存储库
-
-```kotlin
-repositories {
-    maven {
-        name = "personal-maven-repository-releases"
-        setUrl("https://raw.githubusercontent.com/[组织名或用户名]/[存储库名]/[分支名]/repository/releases")
-    }
-    maven {
-        name = "personal-maven-repository-snapshots"
-        setUrl("https://raw.githubusercontent.com/[组织名或用户名]/[存储库名]/[分支名]/repository/snapshots")
-    }
-}
-```
-
-#### 发布工件到存储库
-
-推荐使用 vanniktech 的 [gradle-maven-publish-plugin](https://vanniktech.github.io/gradle-maven-publish-plugin) 来发布 Maven 工件。
-
-下面是一个配置发布到的存储库方式的参考。
-
-你可以直接将存储库发布到本机用户目录下的 `.gradle/personal-maven-repository` 目录中，然后将 `personal-maven-repository` 设置为 git 存储库。
-
-将 `personal-maven-repository` 目录连接到 GitHub。
-
-每次发布工件后，进行一次 `git commit` 和 `git push` 即可同步当前存储库。
-
-```kotlin
-publishing {
-    repositories {
-        val repositoryDir = gradle.gradleUserHomeDir
-            .resolve("personal-maven-repository")
-            .resolve("repository")
-        maven {
-            name = "PersonalMavenReleases"
-            url = repositoryDir.resolve("releases").toURI()
-        }
-        maven {
-            name = "PersonalMavenSnapShots"
-            url = repositoryDir.resolve("snapshots").toURI()
-        }
-    }
-}
-```
 
 ## License
 
@@ -153,7 +81,7 @@ publishing {
 ```
 Apache License Version 2.0
 
-Copyright (C) 2019 HighCapable
+Copyright (C) 2026 Randomusert
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -168,4 +96,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-Copyright © 2019 HighCapable
+Copyright © 2026 Randomusert
