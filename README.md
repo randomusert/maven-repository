@@ -15,13 +15,13 @@ Reference this repository using the link below.
 > Releases
 
 ```
-https://raw.githubusercontent.com/[organization name or username]/[repository name]/[branch name]/repository/releases
+https://raw.githubusercontent.com/randomusert/maven-repository/main/repository/releases
 ```
 
 > SnapShots
 
 ```
-https://raw.githubusercontent.com/[organization name or username]/[repository name]/[branch name]/repository/snapshots
+https://raw.githubusercontent.com/randomusert/maven-repository/main/repository/snapshots
 ```
 
 ### Usage in Gradle Projects
